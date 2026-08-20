@@ -12,7 +12,7 @@ spec:
       name: api-monetization
       namespace: api-monetization-gateway
       sectionName: http
-  hostnames: [api-monetization.invalid]
+  hostnames: [api-monetization.apps.cl02.arencloud.com]
   rules:
     - matches:
         - method: GET
@@ -34,7 +34,7 @@ spec:
       name: api-monetization
       namespace: api-monetization-gateway
       sectionName: http
-  hostnames: [jwt.api-monetization.invalid]
+  hostnames: [api-monetization-jwt.apps.cl02.arencloud.com]
   rules:
     - matches:
         - method: GET

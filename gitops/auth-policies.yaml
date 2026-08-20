@@ -55,7 +55,7 @@ spec:
     authentication:
       keycloak:
         jwt:
-          issuerUrl: https://keycloak-api-monetization.apps.invalid/realms/api-monetization
+          issuerUrl: https://keycloak-api-monetization.apps.cl02.arencloud.com/realms/api-monetization
     authorization:
       keycloak-issuer:
         patternMatching:

@@ -8,17 +8,36 @@ spec:
   targetRef: {group: gateway.networking.k8s.io, kind: HTTPRoute, name: 'demo-app-04-api-key'}
   plans:
     - tier: enterprise
-      predicate: auth.identity.metadata.annotations['secret.kuadrant.io/plan-id'] == "enterprise"
+      predicate: >-
+        has(auth.metadata.subscription) && auth.metadata.subscription.plan == "enterprise"
       limits: {}
+    - tier: business
+      predicate: >-
+        has(auth.metadata.subscription) && auth.metadata.subscription.plan == "business"
+      limits:
+        monthly: 50000000
+        custom:
+          - limit: 10000
+            window: 1m
     - tier: developer
-      predicate: auth.identity.metadata.annotations['secret.kuadrant.io/plan-id'] == "developer"
+      predicate: >-
+        has(auth.metadata.subscription) && auth.metadata.subscription.plan == "developer"
       limits:
         monthly: 1000000
         custom:
           - limit: 1000
             window: 1m
+    - tier: payg
+      predicate: >-
+        has(auth.metadata.subscription) && auth.metadata.subscription.plan == "payg"
+      limits:
+        monthly: 10000
+        custom:
+          - limit: 100
+            window: 1m
     - tier: free
-      predicate: auth.identity.metadata.annotations['secret.kuadrant.io/plan-id'] == "free"
+      predicate: >-
+        has(auth.metadata.subscription) && auth.metadata.subscription.plan == "free"
       limits:
         monthly: 1000
         custom:
@@ -54,3 +73,23 @@ spec:
         - expression: auth.kuadrant.customer
       when:
         - predicate: auth.kuadrant.plan == "developer"
+    payg:
+      rates:
+        - limit: 100
+          window: 1m
+        - limit: 10000
+          window: 720h
+      counters:
+        - expression: auth.kuadrant.customer
+      when:
+        - predicate: auth.kuadrant.plan == "payg"
+    business:
+      rates:
+        - limit: 10000
+          window: 1m
+        - limit: 50000000
+          window: 720h
+      counters:
+        - expression: auth.kuadrant.customer
+      when:
+        - predicate: auth.kuadrant.plan == "business"

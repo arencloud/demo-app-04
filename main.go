@@ -65,8 +65,7 @@ func api(w http.ResponseWriter, r *http.Request) {
 	requestCount.Add(1)
 	writeJSON(w, http.StatusOK, map[string]any{
 		"api":     "demo-app-04",
-		"message": "Replace this handler with your contract implementation.",
-		"request": r.Header.Get("x-request-id"),
+		"Current Time": getTime(),
 	})
 }
 
@@ -96,4 +95,9 @@ func env(name, fallback string) string {
 		return value
 	}
 	return fallback
+}
+
+func getTime() string {
+	timeNow := time.Now()
+	return timeNow.Format("2006-01-02 03:04:05 PM")
 }
