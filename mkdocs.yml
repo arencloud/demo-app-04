@@ -1,0 +1,7 @@
+site_name: Demo App 04
+nav:
+  - Overview: docs/index.md
+  - Plans: docs/plans.md
+plugins:
+  - techdocs-core
+

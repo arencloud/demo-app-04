@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1
+kind: PeerAuthentication
+metadata:
+  name: demo-app-04
+  namespace: api-monetization-apps
+  annotations: {argocd.argoproj.io/sync-wave: "10"}
+spec:
+  selector:
+    matchLabels: {app.kubernetes.io/name: 'demo-app-04'}
+  mtls: {mode: STRICT}
+  portLevelMtls:
+    "8082": {mode: DISABLE}

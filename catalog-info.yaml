@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demo-app-04
+  title: Demo App 04
+  description: Demo
+  annotations:
+    github.com/project-slug: arencloud/demo-app-04
+    argocd/app-name: demo-app-04
+    backstage.io/kubernetes-id: demo-app-04
+    backstage.io/source-template: template:default/monetized-api-interface
+    backstage.io/template-version: 1.2.1
+  tags: [api, kuadrant, monetized, openshift]
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/api-owners
+  # Kuadrant creates the consumer-facing API entities after publication. Keep
+  # them unrelated here because consumers intentionally cannot read Components.

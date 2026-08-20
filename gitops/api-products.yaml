@@ -1,0 +1,49 @@
+apiVersion: devportal.kuadrant.io/v1alpha1
+kind: APIProduct
+metadata:
+  name: demo-app-04-api
+  namespace: api-monetization-apps
+  annotations:
+    argocd.argoproj.io/sync-wave: "40"
+    backstage.io/owner: group:default/api-owners
+    monetization.arencloud.com/product: demo-app-04
+    monetization.arencloud.com/path: /demo04
+    monetization.arencloud.com/unit: request
+spec:
+  displayName: Demo App 04
+  description: Demo
+  version: v1
+  approvalMode: automatic
+  publishStatus: Published
+  targetRef: {group: gateway.networking.k8s.io, kind: HTTPRoute, name: 'demo-app-04-api-key'}
+  tags: [api, monetized, generated]
+  contact: {team: API Owners, email: api-owners@example.invalid}
+  documentation:
+    docsURL: https://github.com/arencloud/demo-app-04/blob/main/README.md
+    openAPISpecURL: http://demo-app-04.api-monetization-apps.svc.cluster.local:8082/openapi.yaml
+    gitRepository: https://github.com/arencloud/demo-app-04
+---
+apiVersion: devportal.kuadrant.io/v1alpha1
+kind: APIProduct
+metadata:
+  name: demo-app-04-api-jwt
+  namespace: api-monetization-apps
+  annotations:
+    argocd.argoproj.io/sync-wave: "40"
+    backstage.io/owner: group:default/api-owners
+    monetization.arencloud.com/product: demo-app-04
+    monetization.arencloud.com/path: /demo04
+    monetization.arencloud.com/unit: request
+spec:
+  displayName: Demo App 04 (Keycloak JWT)
+  description: Demo
+  version: v1
+  approvalMode: automatic
+  publishStatus: Published
+  targetRef: {group: gateway.networking.k8s.io, kind: HTTPRoute, name: 'demo-app-04-jwt'}
+  tags: [api, oidc, keycloak, monetized, generated]
+  contact: {team: API Owners, email: api-owners@example.invalid}
+  documentation:
+    docsURL: https://github.com/arencloud/demo-app-04/blob/main/README.md
+    openAPISpecURL: http://demo-app-04.api-monetization-apps.svc.cluster.local:8082/openapi.yaml
+    gitRepository: https://github.com/arencloud/demo-app-04
