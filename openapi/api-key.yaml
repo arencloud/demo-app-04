@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Demo App 04
+  version: 1.0.0
+  description: Demo
+servers:
+  - url: https://api.example.invalid
+    description: API-key endpoint; replaced by the admitted Gateway API hostname during publication
+paths:
+  /demo04:
+    get:
+      operationId: getDemoApp04WithApiKey
+      summary: Invoke Demo App 04 with an API key
+      security:
+        - apiKey: []
+      responses:
+        '200': {description: Successful response}
+        '401': {description: A valid API key is required}
+        '403': {description: An active subscription is required}
+        '429': {description: The selected plan limit has been reached}
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Use `APIKEY <credential>`.

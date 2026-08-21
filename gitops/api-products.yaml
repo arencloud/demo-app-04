@@ -21,7 +21,7 @@ spec:
   contact: {team: API Owners, email: api-owners@example.invalid}
   documentation:
     docsURL: https://github.com/arencloud/demo-app-04/blob/main/README.md
-    openAPISpecURL: http://demo-app-04.api-monetization-apps.svc.cluster.local:8082/openapi.yaml
+    openAPISpecURL: http://demo-app-04.api-monetization-apps.svc.cluster.local:8082/openapi/api-key.yaml
     gitRepository: https://github.com/arencloud/demo-app-04
 ---
 apiVersion: devportal.kuadrant.io/v1alpha1
@@ -47,5 +47,5 @@ spec:
   contact: {team: API Owners, email: api-owners@example.invalid}
   documentation:
     docsURL: https://github.com/arencloud/demo-app-04/blob/main/README.md
-    openAPISpecURL: http://demo-app-04.api-monetization-apps.svc.cluster.local:8082/openapi.yaml
+    openAPISpecURL: http://demo-app-04.api-monetization-apps.svc.cluster.local:8082/openapi/keycloak-jwt.yaml
     gitRepository: https://github.com/arencloud/demo-app-04
