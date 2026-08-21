@@ -9,6 +9,7 @@ metadata:
     monetization.arencloud.com/product: demo-app-04
     monetization.arencloud.com/path: /demo04
     monetization.arencloud.com/unit: request
+    monetization.arencloud.com/plans: '{"free":{"monthlyPriceCents":0,"includedUnits":1000,"monthlyQuotaUnits":1000,"overageMicrosPerUnit":0,"rateLimitRequests":10,"rateLimitWindowSeconds":60},"payg":{"monthlyPriceCents":0,"includedUnits":0,"monthlyQuotaUnits":10000,"overageMicrosPerUnit":10000,"rateLimitRequests":100,"rateLimitWindowSeconds":60},"developer":{"monthlyPriceCents":4900,"includedUnits":100000,"monthlyQuotaUnits":1000000,"overageMicrosPerUnit":1000,"rateLimitRequests":1000,"rateLimitWindowSeconds":60},"business":{"monthlyPriceCents":49900,"includedUnits":5000000,"monthlyQuotaUnits":50000000,"overageMicrosPerUnit":500,"rateLimitRequests":10000,"rateLimitWindowSeconds":60},"enterprise":{"monthlyPriceCents":0,"includedUnits":null,"monthlyQuotaUnits":null,"overageMicrosPerUnit":0,"rateLimitRequests":null,"rateLimitWindowSeconds":null}}'
 spec:
   displayName: Demo App 04
   description: Demo
@@ -34,6 +35,7 @@ metadata:
     monetization.arencloud.com/product: demo-app-04
     monetization.arencloud.com/path: /demo04
     monetization.arencloud.com/unit: request
+    monetization.arencloud.com/plans: '{"free":{"monthlyPriceCents":0,"includedUnits":1000,"monthlyQuotaUnits":1000,"overageMicrosPerUnit":0,"rateLimitRequests":10,"rateLimitWindowSeconds":60},"payg":{"monthlyPriceCents":0,"includedUnits":0,"monthlyQuotaUnits":10000,"overageMicrosPerUnit":10000,"rateLimitRequests":100,"rateLimitWindowSeconds":60},"developer":{"monthlyPriceCents":4900,"includedUnits":100000,"monthlyQuotaUnits":1000000,"overageMicrosPerUnit":1000,"rateLimitRequests":1000,"rateLimitWindowSeconds":60},"business":{"monthlyPriceCents":49900,"includedUnits":5000000,"monthlyQuotaUnits":50000000,"overageMicrosPerUnit":500,"rateLimitRequests":10000,"rateLimitWindowSeconds":60},"enterprise":{"monthlyPriceCents":0,"includedUnits":null,"monthlyQuotaUnits":null,"overageMicrosPerUnit":0,"rateLimitRequests":null,"rateLimitWindowSeconds":null}}'
 spec:
   displayName: Demo App 04 (Keycloak JWT)
   description: Demo
