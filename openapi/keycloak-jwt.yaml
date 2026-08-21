@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Demo App 04 (Keycloak JWT)
+  version: 1.0.0
+  description: Demo
+servers:
+  - url: https://jwt.api.example.invalid
+    description: Keycloak JWT endpoint; replaced by the admitted Gateway API hostname during publication
+paths:
+  /demo04:
+    get:
+      operationId: getDemoApp04WithKeycloakJwt
+      summary: Invoke Demo App 04 with a Keycloak access token
+      security:
+        - keycloakBearer: []
+      responses:
+        '200': {description: Successful response}
+        '401': {description: A valid Keycloak bearer token is required}
+        '403': {description: An active subscription is required}
+        '429': {description: The selected plan limit has been reached}
+components:
+  securitySchemes:
+    keycloakBearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Paste the Keycloak access token. Swagger sends it as `Authorization: Bearer <token>`.'
