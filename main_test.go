@@ -51,3 +51,11 @@ func TestAuthenticationSpecificOpenAPI(t *testing.T) {
 		t.Fatal("JWT contract does not expose the admitted endpoint")
 	}
 }
+
+func TestBrowserPreflight(t *testing.T) {
+	response := httptest.NewRecorder()
+	routes().ServeHTTP(response, httptest.NewRequest(http.MethodOptions, "/demo04", nil))
+	if response.Code != http.StatusNoContent {
+		t.Fatalf("preflight status = %d, want %d", response.Code, http.StatusNoContent)
+	}
+}
